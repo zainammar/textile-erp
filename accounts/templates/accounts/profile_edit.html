@@ -1,8 +1,9 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Edit Profile</title>
-    <style>
+{% extends 'accounts/base.html' %}
+
+
+
+{% block content %}
+    <!-- <style>
         body { font-family: Arial; max-width: 600px; margin: 50px auto; padding: 20px; }
         .header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
         input[type="text"], input[type="email"], input[type="date"], input[type="tel"], textarea, select { 
@@ -76,9 +77,8 @@
             display: block;
             margin-top: 5px;
         }
-    </style>
-</head>
-<body>
+    </style> -->
+
     <div class="header">
         <h2>Edit Profile</h2>
         <a href="{% url 'profile' %}" class="btn-back">Back to Profile</a>
@@ -142,5 +142,5 @@
         
         <button type="submit">Update Profile</button>
     </form>
-</body>
-</html>
+  
+    {% endblock %}
