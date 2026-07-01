@@ -1,0 +1,40 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>{% block title %}ERP Textile{% endblock %}</title>
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+    {% block extra_css %}{% endblock %}
+</head>
+<body>
+
+    {% block content %}
+    <div class="row-6 content-grid">
+        <div class="grid-item-1">
+
+            <h2 class="heading-two">ERP Textile</h2>
+
+        </div>
+        <div class="grid-item-1">
+
+            <h2 class="heading-two">ERP Textile</h2>
+
+        </div>
+        <div class="grid-item-1">
+
+            <h2 class="heading-two">ERP Textile</h2>
+
+        </div>
+    </div>
+    {% endblock %}
+
+    {% block extra_js %}
+    {% endblock %}
+
+</body>
+</html>
