@@ -1,35 +1,59 @@
 {% extends 'accounts/base.html' %}
-
-
+{% load static %}
 
 {% block content %}
-<div class="row-6 content-grid">
-    <div class="grid-item-1">  </div>
+<div class="row-3 content-grid">
     <div class="grid-item-1">  
-
-
-
         <div class="header">
             <h2>Home Page</h2>
+            <br>
             <div class="nav-buttons">
-                <a href="{% url 'user_list' %}" class="btn btn-success">Browse Users</a>
+                <a href="{% url 'user_list' %}" class="btn btn-primary">Browse Users</a>
                 <a href="{% url 'profile' %}" class="btn btn-primary">My Profile</a>
-    
-        </div>
+    </div>
+        </div></div>
+    <div class="grid-item-1">  
+
         <div class="welcome">
             <div class="profile-preview">
                 <img src="{{ user.profile.profile_picture.url }}" alt="Profile Picture" class="profile-img">
-                <div>
-                    <h3>Welcome, {{ user.username }}!</h3>
-                    <p>You are successfully logged in.</p>
-                </div>
+             
             </div>
         </div>
+
+       
+    
+        </div>
+     
+    
+    <div class="grid-item-1"> 
+        
+        <div>
+            <h3>Welcome, {{ user.username }}!</h3>
+            <p>You are successfully logged in.</p>
+        </div>
     </div>
-    <div class="grid-item-1">  </div>
 
 </div>
 <br>
+<div class="row-2 content-grid">
+    <div class="grid-item-1"> 
+        <h2>Dashboard</h2>
+    </div>
+</div>
+<div class="row-2 content-grid">
+    <div class="grid-item-1"> 
+    
+
+   
+            <h3>Total Products: {{ total_products }}</h3>
+         
+  
+    </div>
+    <div class="grid-item-1"> 
+        <h3>Total Categories: {{ total_categories }}</h3>
+    </div>
+</div>
 <h2>Categories ({{ total_categories }})</h2>
 
 <table>
@@ -59,5 +83,34 @@
         </tr>
         {% endfor %}
     </tbody>
+</table>
+
+<br>
+
+
+<hr>
+
+<h3>Recent Products</h3>
+
+<table border="1" cellpadding="10">
+    <tr>
+        <th>SKU</th>
+        <th>Name</th>
+        <th>Category</th>
+        <th>Price</th>
+    </tr>
+
+    {% for p in products %}
+    <tr>
+        <td>{{ p.sku }}</td>
+        <td>{{ p.name }}</td>
+        <td>{{ p.category.name }}</td>
+        <td>{{ p.sale_price }}</td>
+    </tr>
+    {% empty %}
+    <tr>
+        <td colspan="4">No products found</td>
+    </tr>
+    {% endfor %}
 </table>
     {% endblock %}

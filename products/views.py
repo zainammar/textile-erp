@@ -73,3 +73,6 @@ def product_delete(request, pk):
             'product': product
         }
     )
+
+
+

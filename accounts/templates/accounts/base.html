@@ -9,7 +9,7 @@
 
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 
-    {% block extra_css %}{% endblock %}
+
 </head>
 <body>
 
@@ -17,7 +17,11 @@
     <div class="row-6 content-grid">
         <div class="grid-item-1">
 
-            <h2 class="heading-two">ERP Textile</h2>
+            <h2>Toggle Dark/Light Mode</h2>
+<p>Click the button to toggle between dark and light mode for this page.</p>
+
+<button onclick="myFunction()">Toggle dark mode</button>
+
 
         </div>
         <div class="grid-item-1">
@@ -31,6 +35,12 @@
 
         </div>
     </div>
+    <script>
+        function myFunction() {
+           var element = document.body;
+           element.classList.toggle("dark-mode");
+        }
+        </script>
     {% endblock %}
 
     {% block extra_js %}

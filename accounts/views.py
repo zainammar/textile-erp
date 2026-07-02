@@ -123,3 +123,47 @@ def home(request):
     }
 
     return render(request, 'accounts/home.html', context)
+
+
+
+from django.contrib.auth.decorators import login_required
+from django.shortcuts import render
+from products.models import Product
+from categories.models import Category
+
+@login_required
+def home(request):
+
+    products = Product.objects.all().order_by('-id')[:5]   # latest 5 products
+    total_products = Product.objects.count()
+    total_categories = Category.objects.count()
+
+    context = {
+        'products': products,
+        'total_products': total_products,
+        'total_categories': total_categories,
+    }
+
+    return render(request, 'accounts/home.html', context)
+
+
+from django.contrib.auth.decorators import login_required
+from django.shortcuts import render
+from products.models import Product
+from categories.models import Category
+
+@login_required
+def home(request):
+
+    products = Product.objects.all().order_by('-id')[:5]
+
+    categories = Category.objects.all().order_by('name')  # 👈 ADD THIS
+
+    context = {
+        'products': products,
+        'categories': categories,   # 👈 ADD THIS
+        'total_products': Product.objects.count(),
+        'total_categories': Category.objects.count(),
+    }
+
+    return render(request, 'accounts/home.html', context)

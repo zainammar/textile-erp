@@ -1,7 +1,25 @@
 body {
-  background-color: #e4e6a0 !important;
+  padding: 25px;
+  background-color: white;
+  color: black;
+  font-size: 15px;
 }
 
+.dark-mode {
+  background-color: black;
+  color: white;
+}
+
+
+button{
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  background-color: #4CAF50; /* Green */
+  color: white;
+}
 /* GRID */
 
   /* Grid Content */
@@ -105,10 +123,10 @@ body {
 
 /* Edit karna theme se */
 
-body { font-family: Arial; max-width: 600px; margin: 50px auto; padding: 20px; }
+body { font-family: Arial; max-width: 80%; margin: 50px auto; padding: 20px; }
 .header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
 .btn { padding: 10px 20px; color: white; text-decoration: none; border-radius: 5px; display: inline-block; }
-.btn-primary { background: #2196F3; }
+.btn-primary { background: #2196F3;padding: 10px;margin: 10px; }
 .btn-primary:hover { background: #0b7dda; }
 .btn-secondary { background: #4CAF50; }
 .btn-secondary:hover { background: #45a049; }
@@ -117,3 +135,13 @@ body { font-family: Arial; max-width: 600px; margin: 50px auto; padding: 20px; }
 .profile-info label { font-weight: bold; color: #555; }
 .profile-info p { margin: 5px 0 15px 0; color: #333; }
 .nav-buttons { display: flex; gap: 10px; }
+.btn-success{ background: #2196F3; }
+.btn-successy:hover { background: #45a049; }
+
+
+.profile-img{
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+}
