@@ -48,7 +48,7 @@
    
             <h3>Total Products: {{ total_products }}</h3>
          
-  
+          <p>Total Expenses: {{ total_expenses }}</p>
     </div>
     <div class="grid-item-1"> 
         <h3>Total Categories: {{ total_categories }}</h3>
@@ -89,28 +89,79 @@
 
 
 <hr>
-
 <h3>Recent Products</h3>
 
-<table border="1" cellpadding="10">
-    <tr>
-        <th>SKU</th>
-        <th>Name</th>
-        <th>Category</th>
-        <th>Price</th>
-    </tr>
+<table>
+    <thead>
+        <tr>
+            <th>SKU</th>
+            <th>Product</th>
+            <th>Category</th>
+            <th>Purchase Date</th>
+            <th>Sale Date</th>
+            <th>Purchase Price</th>
+            <th>Expenses</th>
+            <th>Price Option</th>
+            <th>Sale Price</th>
+            <th>Stock</th>
+            <th>Status</th>
+        </tr>
+    </thead>
+
+    <tbody>
 
     {% for p in products %}
     <tr>
+
         <td>{{ p.sku }}</td>
+
         <td>{{ p.name }}</td>
+
         <td>{{ p.category.name }}</td>
+
+        <td>{{ p.purchase_date|default:"-" }}</td>
+
+        <td>{{ p.sale_date|default:"-" }}</td>
+
+        <td>{{ p.purchase_price }}</td>
+
+        <td>
+            {{ p.expense1 }}
+            +
+            {{ p.expense2 }}
+            +
+            {{ p.expense3 }}
+            +
+            {{ p.expense4 }}
+            +
+            {{ p.expense5 }}
+        </td>
+
+        <td>{{ p.get_price_option_display }}</td>
+
         <td>{{ p.sale_price }}</td>
+
+        <td>{{ p.current_stock }}</td>
+
+        <td>
+            {% if p.status %}
+                Active
+            {% else %}
+                Inactive
+            {% endif %}
+        </td>
+
     </tr>
+
     {% empty %}
+
     <tr>
-        <td colspan="4">No products found</td>
+        <td colspan="11">No products found.</td>
     </tr>
+
     {% endfor %}
+
+    </tbody>
 </table>
-    {% endblock %}
+
+{% endblock %}
