@@ -6,12 +6,10 @@
     <div class="grid-item-1">  
         <div class="header">
             <h2>Home Page</h2>
-            <br>
-            <div class="nav-buttons">
-                <a href="{% url 'user_list' %}" class="btn btn-primary">Browse Users</a>
-                <a href="{% url 'profile' %}" class="btn btn-primary">My Profile</a>
+        
+            <h3>Welcome, {{ user.username }}!</h3>
     </div>
-        </div></div>
+        </div>
     <div class="grid-item-1">  
 
         <div class="welcome">
@@ -29,7 +27,7 @@
     <div class="grid-item-1"> 
         
         <div>
-            <h3>Welcome, {{ user.username }}!</h3>
+      
             <p>You are successfully logged in.</p>
         </div>
     </div>

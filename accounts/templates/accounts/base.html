@@ -1,50 +1,64 @@
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
 
-    <title>{% block title %}ERP Textile{% endblock %}</title>
-
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-
-
-</head>
 <body>
+    <div class="row-2 content-grid">
+        <div class="grid-item-1"> 
+            <nav class="navbar">
+                <h1>ERP Textile</h1>
+                <div class="nav-links">
+                    <a href="{% url 'home' %}">Home</a>
+                    <a href="{% url 'profile' %}">Profile</a>
+                    <a href="{% url 'user_list' %}">Users</a>
+                </div>
+            </nav>
 
-    {% block content %}
-    <div class="row-6 content-grid">
-        <div class="grid-item-1">
+            </div>
+            <div class="grid-item-1"> 
+                <h2>Toggle Dark/Light Mode</h2>
 
-            <h2>Toggle Dark/Light Mode</h2>
-<p>Click the button to toggle between dark and light mode for this page.</p>
+                
+                <button onclick="myFunction()">Toggle dark mode</button>
+                <script>
+                    function myFunction() {
+                       var element = document.body;
+                       element.classList.toggle("dark-mode");
+                    }
+                    </script>
 
-<button onclick="myFunction()">Toggle dark mode</button>
+            </div>
 
+
+    </div>
+ 
+ 
+    <main>
+        {% block content %}
+        <!-- default content agar koi child override na kare -->
+        {% endblock %}
+    </main>
+  
+                     </div>
+
+
+    </div>
+    <hr>
+    <div class="row-3 content-grid">
+        <div class="grid-item-1"> 
 
         </div>
-        <div class="grid-item-1">
-
-            <h2 class="heading-two">ERP Textile</h2>
-
+        <div class="grid-item-1"> 
+            <footer>
+                <p>&copy; ERP Textile</p>
+            </footer>
+        
         </div>
-        <div class="grid-item-1">
-
-            <h2 class="heading-two">ERP Textile</h2>
+        <div class="grid-item-1"> 
 
         </div>
     </div>
-    <script>
-        function myFunction() {
-           var element = document.body;
-           element.classList.toggle("dark-mode");
-        }
-        </script>
-    {% endblock %}
-
-    {% block extra_js %}
-    {% endblock %}
+  
+    {% block extra_js %}{% endblock %}
 
 </body>
 </html>

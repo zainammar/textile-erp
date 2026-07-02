@@ -2,15 +2,41 @@ body {
   padding: 25px;
   background-color: white;
   color: black;
-  font-size: 15px;
+  font-size: 20px;
 }
 
 .dark-mode {
   background-color: black;
   color: white;
+
+  li{
+    color: white;
+  }
+
+  table {
+    color: white;
+  }
 }
 
+.nav-links{
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  background-color: #2196F3;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  text-decoration: none;
+}
 
+a{
+  background-color: rgb(248, 255, 210);
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+  padding: 10px;
+  border-radius: 5px;
+  margin: 10px;
+}
 button{
   padding: 10px 20px;
   font-size: 16px;
